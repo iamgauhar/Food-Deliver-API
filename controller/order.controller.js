@@ -23,9 +23,14 @@ const newOrder = async (req, res) => {
 }
 
 const myOrder = async (req, res) => {
-    const { id } = req.params
-    const response = await orderModel.findById({ _id: id })
-    res.status(200).json(response)
+    try {
+        const { id } = req.params
+        const response = await orderModel.findById({ _id: id })
+        res.status(200).json(response)
+    } catch (err) {
+        console.log(err);
+    }
+
 }
 
 module.exports = { newOrder, myOrder }

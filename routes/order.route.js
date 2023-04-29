@@ -6,6 +6,6 @@ const orderRoute = express.Router()
 
 
 orderRoute.post("/", authorization, newOrder)
-orderRoute.get("/id", myOrder)
+orderRoute.get("/:id", myOrder)
 
 module.exports = { orderRoute }
