@@ -15,8 +15,7 @@ app.use("/api/restaurants", restaurantRouter)
 app.use("/api/orders", orderRoute)
 
 app.get("/", async (req, res) => {
-    const allUsers = await UserRegisterModel.find()
-    res.send(allUsers)
+    res.send("Welcome to my API")
 })
 
 app.listen(5000, async () => {
